@@ -6,16 +6,27 @@ public class Book {
     private String author;
     private String publisher;
     private String thumbnail;
+    private Category category;
 
     public Book() {
     }
 
-    public Book(int id, String title, String author, String publisher, String thumbnail) {
+    public Book(int id, String title, String author, String publisher, String thumbnail, Category cate_id) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.publisher = publisher;
         this.thumbnail = thumbnail;
+        this.category = category;
+    }
+
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public int getId() {
@@ -66,6 +77,7 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", thumbnail='" + thumbnail + '\'' +
+                ", category=" + category +
                 '}';
     }
 }

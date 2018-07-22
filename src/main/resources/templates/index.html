@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
@@ -13,14 +13,17 @@
         <th>Author</th>
         <th>Publisher</th>
         <th>Thumbnail</th>
+        <th>Category</th>
     </tr>
-    <tr th:each="book : ${books}" th:object="${book}">
-        <td th:text="*{id}"></td>
-        <td th:text="*{title}"></td>
-        <td th:text="*{author}"></td>
-        <td th:text="*{publisher}"></td>
-        <td th:text="*{thumbnail}"></td>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.publisher}"></td>
+        <td th:text="${book.thumbnail}"></td>
+        <td th:text="${book.category.name}"></td>
     </tr>
+      <h4>[[${books}]]</h4>
 </table>
 </body>
 </html>
